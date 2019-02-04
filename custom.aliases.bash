@@ -8,4 +8,4 @@ function ssht(){
 
 # Dave's custom aliases
 alias sudo="sudo "
-alias yum='$HOME/.local/bin/ibm-yum.sh'
+alias yum='FTP3USER=$FTP3USER FTP3PASS=$FTP3PASS $HOME/.local/bin/ibm-yum.sh'
