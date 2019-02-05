@@ -42,6 +42,11 @@ if [ ! -f $HOME/.vim/colors/palenight.vim ]; then
   https://raw.githubusercontent.com/drewtempelmeyer/palenight.vim/master/colors/palenight.vim
 fi
 
+# Add lucius colors for vim if not present
+if [ ! -f $HOME/.vim/colors/lucius.vim ]; then
+  curl -fLo $HOME/.vim/colors/lucius.vim --create-dirs \
+  https://raw.githubusercontent.com/maksimr/Lucius2/master/colors/lucius.vim
+fi
 
 # Symlink all of our dotfiles to the home directory
 for i in .vimrc .dircolors .bashrc .bash_profile .bash_darwin .tmux.conf;

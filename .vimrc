@@ -35,7 +35,7 @@ set ttymouse=xterm2
 " Color adjustments
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme lucius
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
