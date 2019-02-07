@@ -22,3 +22,27 @@ function ghf {
         `grepped-history "$1" | unique-history | grep ^$2 | chop-first-column`;
       fi
 }
+
+#
+# Tools for working with network namespaces
+#
+create_ns () {
+   NETNS=$1
+   DEV=$2
+   IP=$3
+   sudo ip netns add ${NETNS}
+   sudo ip netns exec $(NETNS} ip addr add dev ${DEV} ${IP}
+   sudo ip netns exec ${NETNS} ip link set dev lo up 
+}
+
+as_ns () {
+  NETNS=$1
+  shift
+  sudo ip netns exec ${NETNS} $@
+}
+
+clear_ns() {
+  for NETNS in $(sudo ip netns list); do
+    sudo ip netns delete $NETNS
+  done
+}
