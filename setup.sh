@@ -20,6 +20,7 @@ done
 script_home="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Update bash-it if it's already installed or download it if it's not
+echo "Installing/updating bash-it..."
 if [ -d $HOME/.bash_it ]; then
   cd $HOME/.bash_it
   git pull
