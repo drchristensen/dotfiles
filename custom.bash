@@ -31,7 +31,7 @@ create_ns () {
    DEV=$2
    IP=$3
    sudo ip netns add ${NETNS}
-   sudo ip netns exec $(NETNS} ip addr add dev ${DEV} ${IP}
+   sudo ip netns exec ${NETNS} ip addr add dev ${DEV} ${IP}
    sudo ip netns exec ${NETNS} ip link set dev lo up 
 }
 
