@@ -31,7 +31,7 @@ create_ns () {
    DEV=$2
    IP=$3
    sudo ip netns add ${NETNS}
-   sudo ip netns exec $(NETNS} ip addr add dev ${DEV} ${IP}
+   sudo ip netns exec ${NETNS} ip addr add dev ${DEV} ${IP}
    sudo ip netns exec ${NETNS} ip link set dev lo up 
 }
 
@@ -43,6 +43,6 @@ as_ns () {
 
 clear_ns() {
   for NETNS in $(sudo ip netns list); do
-    sudo ip netns delete $NETNS
+    sudo ip netns delete ${NETNS}
   done
 }
