@@ -29,7 +29,7 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set pastetoggle=<F10>
-set mouse=a       " Enable mouse in all modes
+"set mouse=a       " Enable mouse in all modes
 set ttymouse=xterm2
 
 " Color adjustments
