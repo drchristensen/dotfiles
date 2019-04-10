@@ -46,3 +46,27 @@ clear_ns() {
     sudo ip netns delete ${NETNS}
   done
 }
+
+#
+# Tools for working with DPDK
+#
+function _rte() {
+   if [ "$1" != "" ]; then
+       export RTE_SDK=`pwd`
+       export RTE_TARGET=`basename $1`
+       echo "RTE_SDK: "$RTE_SDK " RTE_TARGET: "$RTE_TARGET
+   else
+       echo "Currently RTE_SDK: "$RTE_SDK " RTE_TARGET: "$RTE_TARGET
+   fi
+}
+
+function _bld() {
+   echo make -C ${RTE_SDK} install T=${RTE_TARGET} $@ -j8
+   make -C ${RTE_SDK} install T=${RTE_TARGET} $@ -j8
+}
+
+function _dbld() {
+   echo make -C ${RTE_SDK} install T=${RTE_TARGET} EXTRA_CFLAGS="-g -O0" $@ -j8
+   make -C ${RTE_SDK} install T=${RTE_TARGET} EXTRA_CFLAGS="-g -O0" $@ -j8
+}
+

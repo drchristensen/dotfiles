@@ -9,3 +9,8 @@ function ssht(){
 # Dave's custom aliases
 alias sudo="sudo "
 alias yum='FTP3USER=$FTP3USER FTP3PASS=$FTP3PASS $HOME/.local/bin/ibm-yum.sh'
+
+# DPDK aliases
+alias rte=_rte $@
+alias bld=_bld $@
+alias dbld=_dbld $@
