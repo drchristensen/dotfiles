@@ -68,7 +68,7 @@ let g:is_posix = 1
 " Expand tab to 2 spaces
 set tabstop=2
 set softtabstop=2
-set expandtab
+set noexpandtab
 set shiftwidth=2
 set smarttab
 
@@ -84,10 +84,10 @@ set number
 set numberwidth=5
 
 " Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" nnoremap <Left> :echoe "Use h"<CR>
+" nnoremap <Right> :echoe "Use l"<CR>
+" nnoremap <Up> :echoe "Use k"<CR>
+" nnoremap <Down> :echoe "Use j"<CR>
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
