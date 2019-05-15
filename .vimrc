@@ -124,8 +124,8 @@ set diffopt+=vertical
 set statusline=%f         " Path to the file
 set statusline+=%y        " Filetype of the file
 set statusline+=%=        " Switch to the right side
-set statusline+=Current:\ %-4l " Display current line
-set statusline+=Total:\ %-4L " Dispay total lines
+set statusline+=Row:\ %-4l " Display current line
+set statusline+=Col:\ %-4c " Dispay current column
 set statusline+=%{fugitive#statusline()} " Git status
 
 " map nerdtree viewport to CTRL+n
