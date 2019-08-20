@@ -1,3 +1,11 @@
 [user]
 	email = drc@ibm.com
 	name = David Christensen
+[core]
+	editor = vim
+[push]
+  default = matching
+[sendemail]
+  smtpServer = na.relay.ibm.com
+  smtpServerPort = 25
+  suppress-cc = self
