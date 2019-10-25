@@ -11,6 +11,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
+Plug 'editorconfig/editorconfig-vim'
 
 " Add plugins to &runtimepath
 call plug#end()
