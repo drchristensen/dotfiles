@@ -4,7 +4,7 @@
 ######################
 # GDB options
 ######################
-set prompt \033[31mgdb$ \033[0m
+set prompt \033[0;32m(gdb) \033[0m
 
 set input-radix 0x10
 set output-radix 0x10
@@ -12,6 +12,7 @@ set output-radix 0x10
 set history filename ~/.gdb_history
 set history save on
 set history size 10000
+set auto-load local-gdbinit on
 
 ######################
 # Breakpoint aliases
