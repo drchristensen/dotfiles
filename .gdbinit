@@ -37,6 +37,21 @@ Usage: bpt LOCATION
 LOCATION may be a line number, function name, or "*" and an address.
 end
 
+define jto
+    if $argc != 1
+        help jto
+    else
+        tbreak $arg0
+        jump $arg0
+    end
+end
+document jto
+Jump over code to a temporary breakpoint.
+Will be deleted when hit!
+Usage: jto LOCATION
+LOCATION may be a line number, function name, or "*" and an address.
+end
+
 ######################
 # Process information
 ######################
