@@ -35,16 +35,16 @@ ln $params $script_home/custom.aliases.bash $HOME/.bash_it/aliases/custom.aliase
 ln $params $script_home/custom.bash $HOME/.bash_it/lib/custom.bash
 
 # Add solarized colors for vim if not present
-#if [ ! -f $HOME/.vim/colors/solarized.vim ]; then
-#  curl -fLo $HOME/.vim/colors/solarized.vim --create-dirs \
-#  https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-#fi
+if [ ! -f $HOME/.vim/colors/solarized.vim ]; then
+  curl -fLo $HOME/.vim/colors/solarized.vim --create-dirs \
+  https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+fi
 
 # Add palenight colors for vim if not present
-#if [ ! -f $HOME/.vim/colors/palenight.vim ]; then
-#  curl -fLo $HOME/.vim/colors/palenight.vim --create-dirs \
-#  https://raw.githubusercontent.com/drewtempelmeyer/palenight.vim/master/colors/palenight.vim
-#fi
+if [ ! -f $HOME/.vim/colors/palenight.vim ]; then
+  curl -fLo $HOME/.vim/colors/palenight.vim --create-dirs \
+  https://raw.githubusercontent.com/drewtempelmeyer/palenight.vim/master/colors/palenight.vim
+fi
 
 # Add lucius colors for vim if not present
 if [ ! -f $HOME/.vim/colors/lucius.vim ]; then

@@ -7,11 +7,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'pearofducks/ansible-vim'
+" Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'vim-syntastic/syntastic'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -29,12 +29,13 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
-set pastetoggle=<F10>
+set pastetoggle=<F10>	" Use F10 to toggle between :paste and :nopaste
 "set mouse=a       " Enable mouse in all modes
 set ttymouse=xterm2
 
 " Color adjustments
 syntax enable
+set t_Co=256
 set background=dark
 colorscheme lucius
 
@@ -66,12 +67,21 @@ augroup END
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
 
-" Expand tab to 2 spaces
-set tabstop=2
-set softtabstop=2
+" Linux kernel defaults
+set tabstop=8
+set softtabstop=8
 set noexpandtab
-set shiftwidth=2
-set smarttab
+set shiftwidth=8
+set cindent
+set colorcolumn=100
+autocmd BufWritePre * %s/\s\+$//e	" Clears spaces at the end of a line
+
+" Expand tab to 2 spaces
+"set tabstop=2
+"set softtabstop=2
+"set noexpandtab
+"set shiftwidth=2
+"set smarttab
 
 " Display extra whitespace and tabs as characters, but not by default
 set list
@@ -93,9 +103,6 @@ set numberwidth=5
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
 
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
@@ -112,15 +119,6 @@ nnoremap <C-l> <C-w>l
 " Simpler buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_eruby_ruby_quiet_messages =
-    \ {"regex": "possibly useless use of a variable in void context"}
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = '💩'
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-
 " Always use vertical diffs
 set diffopt+=vertical
 
@@ -133,13 +131,21 @@ set statusline+=Col:\ %-4c " Dispay current column
 set statusline+=%{fugitive#statusline()} " Git status
 
 " map nerdtree viewport to CTRL+n
-
-map <C-t> :NERDTreeToggle<CR>
+" map <C-t> :NERDTreeToggle<CR>
 
 " Options for syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {"regex": "possibly useless use of a variable in void context"}
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = '💩'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
