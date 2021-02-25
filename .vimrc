@@ -16,7 +16,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " vim plug-ins
 call plug#begin('~/.vim/plugged')
 
-<<<<<<< HEAD
 " Customized status line plugin
 " See: https://vimawesome.com/plugin/vim-crystalline
 Plug 'rbong/vim-crystalline'
@@ -28,13 +27,6 @@ Plug 'tpope/vim-fugitive'
 " Per project editor configuration settings
 " See: https://vimawesome.com/plugin/editorconfig-vim
 Plug 'editorconfig/editorconfig-vim'
-=======
-" Plug 'pearofducks/ansible-vim'
-Plug 'tpope/vim-fugitive'
-" Plug 'scrooloose/nerdtree'
-Plug 'vim-syntastic/syntastic'
-" Plug 'editorconfig/editorconfig-vim'
->>>>>>> b303053f35566f00499c59f78fa2b97dd8a937b9
 
 " File tree browser
 " Use :NERDTree to open file browser window
@@ -116,85 +108,6 @@ set pastetoggle=<F10>	" Use F10 to toggle between :paste and :nopaste
 "set mouse=a       " Enable mouse in all modes
 set ttymouse=xterm2
 
-<<<<<<< HEAD
-=======
-" Color adjustments
-syntax enable
-set t_Co=256
-set background=dark
-colorscheme lucius
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
-filetype plugin indent on
-
-augroup vimrcEx
-  autocmd!
-
- " When editing a file, always jump to the last known cursor position.
- " Don't do it for commit messages, when the position is invalid, or when
- " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
- " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-  autocmd BufRead,BufNewFile .j2 set filetype=jinja2
-augroup END
-
-" When the type of shell script is /bin/sh, assume a POSIX-compatible
-" shell for syntax highlighting purposes.
-let g:is_posix = 1
-
-" Linux kernel defaults
-set tabstop=8
-set softtabstop=8
-set noexpandtab
-set shiftwidth=8
-set cindent
-set colorcolumn=100
-autocmd BufWritePre * %s/\s\+$//e	" Clears spaces at the end of a line
-
-" Expand tab to 2 spaces
-"set tabstop=2
-"set softtabstop=2
-"set noexpandtab
-"set shiftwidth=2
-"set smarttab
-
-" Display extra whitespace and tabs as characters, but not by default
-set list
-set listchars=tab:\|\ ,trail:·,nbsp:·,eol:$
-
-" Use one space, not two, after punctuation.
-set nojoinspaces
-
-" Numbers
-set number
-set numberwidth=5
-
-" Get off my lawn
-" nnoremap <Left> :echoe "Use h"<CR>
-" nnoremap <Right> :echoe "Use l"<CR>
-" nnoremap <Up> :echoe "Use k"<CR>
-" nnoremap <Down> :echoe "Use j"<CR>
-
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-nnoremap <C-n> <c-w><
-nnoremap <C-m> <c-w>>
->>>>>>> b303053f35566f00499c59f78fa2b97dd8a937b9
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -206,13 +119,13 @@ nnoremap <C-l> <C-w>l
 " Simpler buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
-<<<<<<< HEAD
 
 " Map NERDTree viewport to CTRL+t
 nnoremap <C-t> :NERDTreeToggle<CR>
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
+
 
 "
 " Syntastic configuration
@@ -238,39 +151,3 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 "syntax enable
 "set background=dark
 "colorscheme solarized
-=======
-" Always use vertical diffs
-set diffopt+=vertical
-
-" Set the statusline
-set statusline=%f         " Path to the file
-set statusline+=%y        " Filetype of the file
-set statusline+=%=        " Switch to the right side
-set statusline+=Row:\ %-4l " Display current line
-set statusline+=Col:\ %-4c " Dispay current column
-set statusline+=%{fugitive#statusline()} " Git status
-
-" map nerdtree viewport to CTRL+n
-" map <C-t> :NERDTreeToggle<CR>
-
-" Options for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_eruby_ruby_quiet_messages =
-    \ {"regex": "possibly useless use of a variable in void context"}
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = '💩'
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_loc_list = 0
->>>>>>> b303053f35566f00499c59f78fa2b97dd8a937b9
