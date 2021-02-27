@@ -108,6 +108,10 @@ set pastetoggle=<F10>	" Use F10 to toggle between :paste and :nopaste
 "set mouse=a       " Enable mouse in all modes
 set ttymouse=xterm2
 
+" vmdiff settrings
+set diffopt=vertical,filler
+set scrollbind
+
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
