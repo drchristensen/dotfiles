@@ -50,6 +50,7 @@ clear_ns() {
 #
 # Tools for working with DPDK
 #
+DPDK_CHECKPATCH_PATH=~/src/linux
 function _rte() {
    if [ "$1" != "" ]; then
        export RTE_SDK=`pwd`
