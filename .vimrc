@@ -33,6 +33,10 @@ Plug 'editorconfig/editorconfig-vim'
 " See: https://vimawesome.com/plugin/nerdtree-red
 Plug 'scrooloose/nerdtree'
 
+" Source code tag browser
+" https://vimawesome.com/plugin/taglist-vim
+Plug 'vim-scripts/taglist.vim'
+
 " Syntastic sytax checker
 " Removed due to complexity of identifying project include files
 " See: https://vimawesome.com/plugin/syntastic
@@ -122,6 +126,12 @@ nnoremap <C-l> <C-w>l
 
 " Simpler buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" More intuitive ctags matching
+nnoremap <C-]> g<C-]>
+
+" Show function list
+nnoremap <C-l> :TlistToggle<CR>
 
 
 " Map NERDTree viewport to CTRL+t
