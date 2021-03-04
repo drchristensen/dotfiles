@@ -1,6 +1,13 @@
 # Git shortcuts
-gitdone() { git add -A; git commit -S -v -m "$1"; git push; }
-function gitl() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit }
+gitdone() {
+  git add -A
+  git commit -S -v -m "$1"
+  git push
+}
+
+function gitl() {
+  git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+}
 
 # Use ssht to open tmux automatically for ssh sessions
 function ssht() {
