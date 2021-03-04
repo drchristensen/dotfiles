@@ -13,7 +13,7 @@ export BASH_IT="/home/$USER/.bash_it"
 # Leave empty to disable theming.
 # location /.bash_it/themes/
 export BASH_IT_THEME='powerline'
-export POWERLINE_PROMPT="hostname user_info scm python_venv ruby cwd"
+export POWERLINE_PROMPT="hostname user_info scm python_venv ruby wd"
 
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
