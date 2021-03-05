@@ -112,6 +112,12 @@ set pastetoggle=<F10>	" Use F10 to toggle between :paste and :nopaste
 "set mouse=a       " Enable mouse in all modes
 set ttymouse=xterm2
 
+" Set search options
+set hlsearch       " Highlight matching search terms
+" Press F4 to toggle highlighting on/off, and show current value.
+noremap <F4> :set hlsearch! hlsearch?<CR>
+nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
 " vmdiff settrings
 set diffopt=vertical,filler
 set scrollbind
