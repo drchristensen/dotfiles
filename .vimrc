@@ -111,6 +111,9 @@ set autowrite     " Automatically :write before running commands
 set pastetoggle=<F10>	" Use F10 to toggle between :paste and :nopaste
 "set mouse=a       " Enable mouse in all modes
 set ttymouse=xterm2
+set list
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+
 
 " Set search options
 set hlsearch       " Highlight matching search terms
