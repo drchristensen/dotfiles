@@ -23,3 +23,6 @@ alias hg="history | grep -i "
 alias rte=_rte $@
 alias bld=_bld $@
 alias dbld=_dbld $@
+
+# Microk8s aliases
+alias mkctl="microk8s kubectl"
